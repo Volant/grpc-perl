@@ -1,4 +1,4 @@
-package GRPC;
+package Net::GRPC;
 
 use 5.014002;
 use strict;
@@ -12,7 +12,7 @@ our @ISA = qw(Exporter);
 # names by default without a very good reason. Use EXPORT_OK instead.
 # Do not simply export all your public functions/methods/constants.
 
-# This allows declaration	use GRPC ':all';
+# This allows declaration	use Net::GRPC ':all';
 # If you do not need this, moving things directly into @EXPORT or @EXPORT_OK
 # will save memory.
 our %EXPORT_TAGS = ( 'all' => [ qw(
@@ -28,7 +28,7 @@ our @EXPORT = qw(
 our $VERSION = '0.01';
 
 require XSLoader;
-XSLoader::load('GRPC', $VERSION);
+XSLoader::load('Net::GRPC', $VERSION);
 
 # Preloaded methods go here.
 
@@ -38,16 +38,16 @@ __END__
 
 =head1 NAME
 
-GRPC - Perl extension for blah blah blah
+Net::GRPC - Perl extension for blah blah blah
 
 =head1 SYNOPSIS
 
-  use GRPC;
+  use Net::GRPC;
   blah blah blah
 
 =head1 DESCRIPTION
 
-Stub documentation for GRPC, created by h2xs. It looks like the
+Stub documentation for Net::GRPC, created by h2xs. It looks like the
 author of the extension was negligent enough to leave the stub
 unedited.
 
@@ -72,11 +72,11 @@ If you have a web site set up for your module, mention it here.
 
 =head1 AUTHOR
 
-Volant, E<lt>volant.studio@gmail.comE<gt>
+Gennady Proschaev, E<lt>volant.studio@gmail.comE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2016 by Volant
+Copyright (C) 2016 by Gennady Proschaev
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.14.2 or,

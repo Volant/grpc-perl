@@ -5,5 +5,5 @@
 #include "ppport.h"
 
 
-MODULE = GRPC		PACKAGE = GRPC		
+MODULE = Net::GRPC		PACKAGE = Net::GRPC		
 
