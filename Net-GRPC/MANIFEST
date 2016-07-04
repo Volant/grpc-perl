@@ -6,3 +6,5 @@ ppport.h
 README
 t/Net-GRPC.t
 lib/Net/GRPC.pm
+lib/Net/GRPC/Client.pm
+
