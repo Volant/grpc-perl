@@ -4,23 +4,32 @@
 
 #include "ppport.h"
 
-typedef struct {
-    int ip;
-} Perl_GRPC_Client;
+#include <grpc/grpc.h>
 
-typedef Perl_GRPC_Client * Net_GRPC_Client;
+#include <stdio.h>
+#include <string.h>
 
-MODULE = Net::GRPC		PACKAGE = Net::GRPC
+#include "ext/timeval.h"
 
-MODULE = Net::GRPC		PACKAGE = Net::GRPC::Client
+MODULE = Net::GRPC    PACKAGE = Net::GRPC
 
 PROTOTYPES: DISABLE
 
-Net_GRPC_Client
-new(CLASS)
-    SV* CLASS
-	CODE:
-		Net_GRPC_Client sv;
-		RETVAL = sv;
-	OUTPUT:
-		RETVAL
+BOOT:
+  grpc_init();
+
+void
+destroy()
+  CODE:
+  grpc_shutdown();
+
+SV*
+grpc_version(CLASS)
+  SV* CLASS
+  CODE:
+    const char* version = grpc_version_string();
+    SV* perl_version = newSVpv(version, 0);
+    RETVAL = perl_version;
+  OUTPUT:
+    RETVAL
+
