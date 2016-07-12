@@ -1,19 +1,10 @@
-#!/usr/bin/perl -w
-
 use strict;
+use warnings;
 
-use Devel::Peek;
+use Test::More;
 
-use Encode qw/is_utf8 encode decode from_to/;
+plan tests => 2;
 
-use lib "blib/lib";
-use lib "blib/arch";
+use_ok('Net::GRPC');
 
-use Net::GRPC::Client;
-
-my $ver = Net::GRPC->grpc_version;
-
-Dump $ver;
-
-warn "Using [>" . $ver . "<] version of GRPC";
-
+ok(Net::GRPC->grpc_version ne "", "version");

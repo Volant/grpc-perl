@@ -17,6 +17,7 @@ PROTOTYPES: DISABLE
 
 BOOT:
   grpc_init();
+  gpr_time_init();
 
 void
 destroy()
@@ -33,3 +34,8 @@ grpc_version(CLASS)
   OUTPUT:
     RETVAL
 
+MODULE = Net::GRPC        PACKAGE = Net::GRPC::TimeVal
+INCLUDE: ext/timeval.xs
+
+MODULE = Net::GRPC        PACKAGE = Net::GRPC::Constants
+INCLUDE: ext/constants.xs
