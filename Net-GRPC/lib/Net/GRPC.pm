@@ -10,7 +10,7 @@ require Exporter;
 our @ISA = qw(Exporter);
 
 our @EXPORT_OK = (qw/
-	grpc_version
+    grpc_version
 /);
 
 require XSLoader;
@@ -18,7 +18,7 @@ XSLoader::load('Net::GRPC', $VERSION);
 
 END { destroy(); }
 
-=head1
+=head1 Net::GRPC
 	Google RPC library binds for Perl
 =cut
 

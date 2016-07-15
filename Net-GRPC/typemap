@@ -1,1 +1,2 @@
 Net::GRPC::TimeVal    T_PTROBJ
+Net::GRPC::Client     T_PTROBJ

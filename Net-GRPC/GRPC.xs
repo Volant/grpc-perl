@@ -39,3 +39,7 @@ INCLUDE: ext/timeval.xs
 
 MODULE = Net::GRPC        PACKAGE = Net::GRPC::Constants
 INCLUDE: ext/constants.xs
+
+MODULE = Net::GRPC        PACKAGE = Net::GRPC::Client
+INCLUDE: ext/client.xs
+
